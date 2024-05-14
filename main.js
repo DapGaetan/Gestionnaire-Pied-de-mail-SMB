@@ -1,8 +1,8 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 const fs = require('fs');
+const Datastore = require("nedb");
 
-// Crée une fenêtre
 function createWindow() {
     const win = new BrowserWindow({
         width: 1920,
@@ -24,9 +24,6 @@ function createWindow() {
 
     win.loadFile("index.html");
     win.webContents.openDevTools();
-
-    // Gestion des demandes IPC
-    // Top menu
     ipcMain.on("reduceApp", () => {
         win.minimize();
     });
@@ -43,11 +40,7 @@ function createWindow() {
         win.close();
     });
 
-    // Manipulation de la base de données
     ipcMain.on("addLigneToDb", (event, data) => {
-        const Datastore = require("nedb");
-        const db = new Datastore({ filename: "data.db", autoload: true });
-
         db.insert(data, function (err, newrec) {
             if (err) {
                 console.log("*** err =", err);
@@ -59,15 +52,12 @@ function createWindow() {
     });
 
     ipcMain.on("updateLigneInDb", (event, args) => {
-        const Datastore = require("nedb");
-        const db = new Datastore({ filename: "data.db", autoload: true });
-    
-        const ligneId = args.ligneId; // Utilisez "ligneId" comme déclaré dans les arguments
+        const ligneId = args.ligneId;
         const updatedData = args.updatedData;
-    
+
         console.log("updatedData de main.js prend : " + ligneId + " comme id.");
-    
-        db.update({_id: ligneId}, { $set: updatedData }, {}, function (err, numReplaced) {
+
+        db.update({ _id: ligneId }, { $set: updatedData }, {}, function (err, numReplaced) {
             if (err) {
                 console.log("*** err =", err);
             } else {
@@ -80,8 +70,9 @@ function createWindow() {
     });
 }
 
-// Quand Electron est prêt
-app.whenReady().then(() => {
+const db = new Datastore({ filename: "data.db", autoload: true });
+
+app.on('ready', () => {
     createWindow();
 
     app.on('activate', () => {
@@ -91,9 +82,7 @@ app.whenReady().then(() => {
     });
 });
 
-// Gestion de la fermeture de toutes les fenêtres
 app.on('window-all-closed', () => {
-    // Si ce n'est pas un Darwin (macOS) ou Linux, fermez définitivement l'application lorsque la dernière fenêtre est fermée.
     if (process.platform !== 'darwin') {
         app.quit();
     }

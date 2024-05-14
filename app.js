@@ -139,6 +139,3 @@ closeBtn.addEventListener("click", () =>{
             ipcRenderer.send("updateLigneInDb", { ligneId, updatedData});
         })
     }
-
-
-// -------------------------------------------------------------------------------------------------------------------------------------
