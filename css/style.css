@@ -19,7 +19,6 @@ body {
 nav {
   user-select: none;
   -webkit-app-region: drag;
-  /* permet de définir un emplacement sur l'application qui rend la fenêtre dirigeable a la souris */
   background-color: rgb(40, 137, 211);
   height: fit-content;
   width: 100%;
@@ -44,7 +43,6 @@ nav > ul > li > button {
   margin: 0 5px;
   color: #ffffff;
   -webkit-app-region: no-drag;
-  /* permet de définir qu'elle que choses qui ne peux etre dirigeable a la souris */
 }
 #menu {
   background: white;
@@ -118,7 +116,6 @@ nav > ul > li > button {
   grid-column: 2 !important;
   width: 100% !important;
 }
-
 /* Fin Accueil */
 
 /* Liste D'Agents */
@@ -265,7 +262,6 @@ nav > ul > li > button {
   font-size: 1rem;
   font-weight: 750;
 }
-
 #generation > #menu-genSign > #menu-ul-gensign > #menu-li-gensign > button {
   text-align: center;
   background: white;
@@ -370,7 +366,6 @@ nav > ul > li > button {
   font-size: 1rem;
   font-weight: 750;
 }
-/* Texte dynamique change en fonction de ce qui est séléctionner dans le trieur */
 .titleTab {
   height: 60px;
   width: 100%;
@@ -386,8 +381,6 @@ nav > ul > li > button {
   align-items: center;
   padding-top: 25px;
 }
-/* Fin Texte dynamique */
-
 table {
   align-items: center;
   width: 100%;
@@ -403,7 +396,6 @@ tr {
   font-size: 1.5rem;
   color: rgb(89, 89, 89);
 }
-
 th {
   font-size: 1.8vh;
   border-top: 0.5px solid rgb(25, 179, 235);
@@ -417,7 +409,6 @@ th {
   padding: 0;
   text-overflow: ellipsis;
 }
-
 th:nth-child(1) {
   grid-column: 1;
 }
@@ -460,7 +451,6 @@ th:nth-child(10) {
   margin: 0;
   padding: 0;
 }
-
 td {
   color: rgb(88, 88, 88);
   font-size: 1.1rem;
@@ -594,7 +584,6 @@ thead{
   color: rgb(255, 255, 255);
   padding: 10px;
 }
-
 /* Fin D'Ajout de Signatures */
 
 /* Footer */
