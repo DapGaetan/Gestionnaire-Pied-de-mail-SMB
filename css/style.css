@@ -1,0 +1,621 @@
+/* BASE */
+.hide {
+  display: none;
+  transition: 4s;
+}
+*::-webkit-scrollbar {
+  width: 0 !important;
+}
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  max-width: 1920px;
+  max-height: 1080px;
+}
+body {
+  background-color: whitesmoke;
+}
+nav {
+  user-select: none;
+  -webkit-app-region: drag;
+  /* permet de définir un emplacement sur l'application qui rend la fenêtre dirigeable a la souris */
+  background-color: rgb(40, 137, 211);
+  height: fit-content;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  margin: 0;
+}
+nav > ul {
+  position: relative;
+  text-align: right;
+  list-style: none;
+}
+nav > ul > li {
+  display: inline-block;
+}
+nav > ul > li > button {
+  padding: 8px;
+  font-size: 1.5rem;
+  border: none;
+  outline: none;
+  background: transparent;
+  margin: 0 5px;
+  color: #ffffff;
+  -webkit-app-region: no-drag;
+  /* permet de définir qu'elle que choses qui ne peux etre dirigeable a la souris */
+}
+#menu {
+  background: white;
+  -webkit-app-region: no-drag;
+  margin-top: 50px;
+  position: fixed;
+  height: fit-content;
+}
+#menu > #menu_ul {
+  text-align: center;
+  list-style: none;
+  padding: 0.1rem;
+}
+#menu > #menu_ul > #menu_li {
+  padding: 1.5rem;
+}
+#menu > #menu_ul > #menu_li > a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: grey;
+  font-weight: bold;
+}
+#menu > #menu_ul > #menu_li > a:hover {
+  color: rgb(51, 156, 236);
+}
+/* FIN BASE */
+
+/* Accueil */
+#titreAccueil {
+  text-align: center;
+  align-items: center;
+  font-size: x-large;
+  color: #dd2323;
+  margin-top: 100px;
+  padding: 3em;
+}
+#container {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 2fr;
+}
+#displaySign {
+  height: auto;
+}
+#container td{
+  height: fit-content;
+  width: fit-content;
+  color: rgb(88, 88, 88);
+  font-size: 1.1rem;
+  border: none;
+  overflow: visible;
+  text-align: center;
+  align-items: center;
+  white-space: nowrap;
+  padding: 0;
+}
+#container td img {
+  margin: 0% !important;
+}
+#container tr{
+  width: auto !important;
+  height: auto !important;
+}
+#container p{
+  display: none !important;
+}
+#container img{
+  margin: 0 !important;
+}
+#displaySign {
+  grid-column: 2 !important;
+  width: 100% !important;
+}
+
+/* Fin Accueil */
+
+/* Liste D'Agents */
+.form {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.form-edit h1 {
+  color: grey;
+  font-size: 2rem;
+  margin-top: 0px !important;
+  -webkit-app-region: no-drag;
+}
+.form h1 {
+  color: grey;
+  font-size: 2rem;
+  margin-top: 110px;
+  -webkit-app-region: no-drag !important;
+}
+.form input {
+  align-items: center;
+  margin: 15px;
+  width: 25%;
+  height: 30px;
+  background: white;
+  color: rgb(51, 156, 236);
+  border-radius: 20px;
+  border: 1px solid rgb(51, 156, 236);
+}
+.form input::placeholder {
+  color: rgb(51, 156, 236);
+  font-size: 1rem;
+  text-align: center;
+  font-weight: 750;
+}
+.form input::selection {
+  color: #000000;
+  background-color: rgba(0, 123, 255, 0.415);
+}
+.form select {
+  align-items: center;
+  margin: 15px;
+  width: 25%;
+  height: 30px;
+  background: white;
+  color: rgb(51, 156, 236);
+  border-radius: 20px;
+  border: 1px solid rgb(51, 156, 236);
+  color: rgb(51, 156, 236);
+  font-size: 1rem;
+  text-align: center;
+  font-weight: 750;
+}
+.form select option {
+  color: rgb(51, 156, 236);
+  font-size: 0.9rem;
+  text-align: center;
+  font-weight: 750;
+}
+.form button {
+  background: white;
+  text-align: center;
+  height: 35px;
+  width: 25%;
+  font-weight: bold;
+  color: rgb(51, 156, 236);
+  border-radius: 20px;
+  border: 2px solid rgb(51, 156, 236);
+  font-size: 1.3rem;
+}
+#generation {
+  text-align: center;
+  background-color: rgb(84, 181, 255);
+  margin: 0;
+}
+#generation h3 {
+  font-size: 2rem;
+  color: grey;
+  background-color: #ffffff;
+  border: solid 1px grey;
+  -webkit-app-region: no-drag;
+}
+#generation > #menu-genSign {
+  background: rgb(51, 156, 236);
+  -webkit-app-region: no-drag;
+  height: fit-content;
+  position: inherit;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+#generation > #menu-genSign > #menu-ul-gensign {
+  position: inherit;
+  text-align: center;
+  list-style: none;
+  padding: 0.1rem;
+}
+#generation > #menu-genSign > #menu-ul-gensign > #menu-li-gensign {
+  padding: 2rem;
+}
+
+#generation > #menu-genSign > #menu-ul-gensign > #menu-li-gensign > .hide {
+  display: none;
+  transition: 4s;
+}
+#generation
+  > #menu-genSign
+  > #menu-ul-gensign
+  > #menu-li-gensign
+  > #sendIfCheck
+  > button {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 10px;
+  border: 1px solid green;
+  color: green;
+  font-size: 1rem;
+  font-weight: 750;
+}
+#generation
+  > #menu-genSign
+  > #menu-ul-gensign
+  > #menu-li-gensign
+  > #sendIfCheck
+  > button:hover {
+  background-color: green;
+  border-radius: 20px;
+  border: 1px solid greenyellow;
+  color: white;
+  font-size: 1rem;
+  font-weight: 750;
+}
+#generation
+  > #menu-genSign
+  > #menu-ul-gensign
+  > #menu-li-gensign
+  > #sendIfCheck
+  > button:active {
+  background-color: rgb(2, 111, 2);
+  border-radius: 20px;
+  border: 1px solid rgb(70, 255, 70);
+  color: rgb(221, 221, 221);
+  font-size: 1rem;
+  font-weight: 750;
+}
+
+#generation > #menu-genSign > #menu-ul-gensign > #menu-li-gensign > button {
+  text-align: center;
+  background: white;
+  height: 40px;
+  width: fit-content;
+  padding: 5px;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  border-radius: 20px;
+  border: 2px solid rgb(16, 171, 76);
+  font-size: 1.5rem;
+}
+#generation > #menu-genSign > #menu-ul-gensign > #menu-li-gensign > input {
+  text-decoration: none;
+  color: grey;
+  font-weight: bold;
+  width: fit-content;
+  height: 40px;
+}
+#generation > #menu-genSign > #menu-ul-gensign > #menu-li-gensign > #searchBar {
+  align-items: center;
+  margin: 15px;
+  width: fit-content;
+  height: 40px;
+  background: white;
+  color: rgb(51, 156, 236);
+  border-radius: 20px;
+  border: 1px solid rgb(51, 156, 236);
+}
+#generation
+  > #menu-genSign
+  > #menu-ul-gensign
+  > #menu-li-gensign
+  > #searchBar::placeholder {
+  color: rgb(51, 156, 236);
+  font-size: 0.9rem;
+  text-align: center;
+  font-weight: 750;
+}
+#generation > #menu-genSign > #menu-ul-gensign > #menu-li-gensign > select {
+  text-decoration: none;
+  border-radius: 20px;
+  border: 1px solid rgb(51, 156, 236);
+  background: white;
+  text-align: center;
+  align-items: center;
+  font-weight: bold;
+  color: rgb(51, 156, 236);
+  font-size: 1rem;
+  padding: 5px;
+  width: fit-content;
+  height: 40px;
+}
+#generation > #menu-genSign > #menu-ul-gensign > #menu-li-gensign > span > select {
+  text-decoration: none;
+  border-radius: 20px;
+  border: 1px solid rgb(51, 156, 236);
+  background: white;
+  text-align: center;
+  align-items: center;
+  color: grey;
+  font-weight: bold;
+  color: rgb(51, 156, 236);
+  font-size: 1rem;
+  padding: 5px;
+  width: fit-content;
+  height: 40px;
+}
+#generation
+  > #menu-genSign
+  > #menu-ul-gensign
+  > #menu-li-gensign
+  > #generateallsign {
+  background-color: #ffffff;
+  border-radius: 20px;
+  border: 1px solid green;
+  color: green;
+  font-size: 1rem;
+  font-weight: 750;
+}
+#generation
+  > #menu-genSign
+  > #menu-ul-gensign
+  > #menu-li-gensign
+  > #generateallsign:hover {
+  background-color: green;
+  border-radius: 20px;
+  border: 1px solid greenyellow;
+  color: white;
+  font-size: 1rem;
+  font-weight: 750;
+}
+#generation
+  > #menu-genSign
+  > #menu-ul-gensign
+  > #menu-li-gensign
+  > #generateallsign:active {
+  background-color: rgb(2, 111, 2);
+  border-radius: 20px;
+  border: 1px solid rgb(70, 255, 70);
+  color: rgb(221, 221, 221);
+  font-size: 1rem;
+  font-weight: 750;
+}
+/* Texte dynamique change en fonction de ce qui est séléctionner dans le trieur */
+.titleTab {
+  height: 60px;
+  width: 100%;
+  color: #f1f1f1;
+  background-color: rgb(45, 144, 225);
+  border-top: 0.3px solid #01438d;
+  border-left: none;
+  border-right: none;
+  border-bottom: 0.3px solid #01438d;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  align-items: center;
+  padding-top: 25px;
+}
+/* Fin Texte dynamique */
+
+table {
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  text-align: center;
+}
+tr {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  text-align: center;
+  font-size: 1.5rem;
+  color: rgb(89, 89, 89);
+}
+
+th {
+  font-size: 1.8vh;
+  border-top: 0.5px solid rgb(25, 179, 235);
+  border-left: 0.5px solid rgb(25, 179, 235);
+  border-right: 0.5px solid rgb(25, 179, 235);
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  text-overflow: ellipsis;
+}
+
+th:nth-child(1) {
+  grid-column: 1;
+}
+th:nth-child(2) {
+  grid-column: 2;
+}
+th:nth-child(3) {
+  grid-column: 3;
+}
+th:nth-child(4) {
+  grid-column: 4;
+}
+th:nth-child(5) {
+  grid-column: 5;
+}
+th:nth-child(6) {
+  grid-column: 6;
+}
+th:nth-child(7) {
+  grid-column: 7;
+}
+th:nth-child(8) {
+  grid-column: 8;
+}
+th:nth-child(9) {
+  grid-column: 9;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+th:nth-child(10) {
+  grid-column: 10;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+td {
+  color: rgb(88, 88, 88);
+  font-size: 1.1rem;
+  border-top: 0.5px solid rgb(25, 179, 235);
+  border-left: 0.5px solid rgb(25, 179, 235);
+  border-right: 0.5px solid rgb(25, 179, 235);
+  padding: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  align-items: center;
+  white-space: nowrap;
+  user-select: none;
+}
+td:active{
+  background-color: rgb(222, 222, 222);
+  color: #636363;
+}
+td > input {
+  width: 25px;
+  height: 25px;
+  background: white;
+  color: rgb(51, 156, 236);
+  border: 1px solid rgb(51, 156, 236);
+}
+.btn-trash {
+  color: rgba(213, 10, 10, 0.886);
+  background: none;
+  border: none;
+  font: inherit;
+  font-size: 1.5rem;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.btn-trash:hover {
+  color: rgba(255, 16, 16, 0.886);
+  background: none;
+  border: none;
+  font: inherit;
+  font-size: 1.5rem;
+}
+.btn-trash:active {
+  color: rgb(255, 0, 0);
+  background: none;
+  border: none;
+  font: inherit;
+  font-size: 1.5rem;
+}
+
+.btn-edit {
+  color: rgba(19, 93, 232, 0.886);
+  background: none;
+  border: none;
+  font: inherit;
+  font-size: 1.5rem;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.btn-edit:hover {
+  color: rgba(8, 57, 149, 0.886);
+  background: none;
+  border: none;
+  font: inherit;
+  font-size: 1.5rem;
+}
+.btn-edit:active {
+  color: rgba(19, 93, 232, 0.886);
+  background: none;
+  border: none;
+  font: inherit;
+  font-size: 1.5rem;
+}
+#tableRegistre {
+  width: auto;
+}
+
+thead{
+  min-height: fit-content(+80px);
+}
+/* Fin Liste D'Agents */
+
+/* Ajout de Signatures */
+#dropZones {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+#dropZones > #dropZone {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin-top:25cqmin;
+  min-width: 400px;
+  min-height: 400px;
+  max-width: 800px;
+  max-height: 800px;
+  border-radius: 15px;
+  border: 5px solid rgb(40, 137, 211);
+  cursor: pointer;
+  overflow: scroll;
+}
+#dropZones > #dropZone > p {
+  font-size: 2rem;
+  color: grey;
+  width: fit-content;
+}
+
+#dropZones > #dropZone > section {
+  width: auto;
+  height: fit-content;
+  display: inline-block;
+}
+
+#dropZones > #dropZone > section > input {
+  text-decoration: none;
+  font-size: 1rem;
+  width: fit-content;
+  background: none;
+  border: none;
+  color: rgb(170, 170, 170);
+  padding: 30px;
+}
+#dropZones > #dropZone > section > button {
+  background: rgb(28, 157, 237);
+  border-radius: 20px;
+  border: 1px solid rgb(28, 157, 237);
+  color: rgb(255, 255, 255);
+  padding: 10px;
+}
+
+/* Fin D'Ajout de Signatures */
+
+/* Footer */
+footer {
+  -webkit-app-region: drag;
+  height: 50px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(40, 137, 211);
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+footer > p {
+  color: rgb(196, 196, 196);
+}
+footer > p > span {
+  color: rgb(255, 255, 255);
+}
+/* Fin Footer */

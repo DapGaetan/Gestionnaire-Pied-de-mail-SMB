@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/7aa822a512.js" crossorigin="anonymous"></script>
+    <title>Signature</title>
+</head>
+<body>
+    <!-- Topbar -->
+    <nav>
+        <ul>
+            <li>
+                <button id="reduceBtn">&#128469;&#xFE0E;</button>
+            </li>
+            <li>
+                <button id="sizeBtn">&#128470;</button>
+            </li>
+            <li>
+                <button id="closeBtn">&#9587;</button>
+            </li>
+        </ul>
+    </nav>
+    <!-- Fin Topbar -->
+    <!-- Menu -->
+    <nav id="menu">
+        <ul id="menu_ul">
+            <li id="menu_li"><a href="index.html"><i class="fa-solid fa-house"></i> Accueil</a></li>
+            <li id="menu_li"><a href="listeAgents.html"><i class="fa-solid fa-user"></i> Liste des agents</a></li>
+            <li id="menu_li"><a href="ajoutSignature.html"><i class="fa-sharp fa-solid fa-file-signature"></i> Ajouter une signature</a></li>
+        </ul>
+    </nav>
+    <!-- Fin Menu -->
+    <!-- page -->
+    <!-- Form -->
+    <div class="form">
+        <br>
+        <h1>Ajout d'agent</h1>
+        <hr>
+        <input type="text" id="nomLigne" placeholder="Nom de l'Agent">
+        <br>
+        <input type="text" id="prenomLigne" placeholder="Prénom de l'Agent">
+        <br>
+        <input type="text" id="posteLigne" placeholder="Poste de l'agent">
+        <br>
+        <select id="serviceLigne" placeholder="Service de l'agent">
+            <option value="0">Trier par service :</option>
+            <option value="1">Informatique</option>
+            <option value="2">Comptabilité</option>
+            <option value="3">Voirie</option>
+            <option value="4">Bâtiment</option>
+            <option value="5">Jeunesse</option>
+            <option value="6">Petite Enfance</option>
+            <option value="7">Érim</option>
+            <option value="8">Projet Culturel</option>
+            <option value="9">Administration Généra</option>
+            <option value="10">SPASAD</option>
+            <option value="11">Cours D'Eau</option>
+            <option value="12">Développement Rural</option>
+            <option value="13">Aménagement Du Territoire</option>
+            <option value="14">Direction</option>
+            <option value="15">Déchet</option>
+            <option value="16">Aquatis</option>
+            <option value="17">Communication</option>
+            <option value="18">RH</option>
+        </select>
+        <br>
+        <select id="endroitLigne">
+            <option value="CC OSARTIS-MARQUION - rue Jean Monnet 62490 - Vitry-en-Artois">Osartis Siège</option>
+            <option value="Pöle Entreprise et Numérique d'Osartis-Marquion - 140 rue des cheminots 62490 - Vitry-en-Artois">Fab-Lab</option>
+            <option value="CC OSARTIS-MARQUION - 21 rue de l'école maternelle 62490 - Vitry-en-Artois">Annexe Vitry-en-Artois</option>
+            <option value="CC OSARTIS-MARQUION - 75 rue de la Chapelle - 62860 Marquion">Annexe Marquion</option>
+            <option value="CC OSARTIS-MARQUION - Route départementale RD950 - 62490 Vitry-en-Artois">Aquatis</option>
+        </select>
+        <br>
+        <input type="tel" id="telLigne" placeholder="Numéro de téléphone fix et portable">
+        <br>
+        <input type="text" id="cheminPc" placeholder="Nom du poste de l'agent">
+        <br>
+        <button type="button"  id="btnSaveLigne">Enregistrer</button>
+    </div>
+    <!-- Fin Form -->
+
+    <div id="form-edit" class="hide form form-edit">
+        <br>
+        <h1>Modification <span id="titleS"></span> <span id="titleN"></span></h1>
+        <hr>
+        <input type="text" id="idUpLigne" placeholder="Id de l'agent">
+        <br>
+        <input type="text" id="nomUpLigne" placeholder="Nom de l'Agent">
+        <br>
+        <input type="text" id="prenomUpLigne" placeholder="Prénom de l'Agent">
+        <br>
+        <input type="text" id="posteUpLigne" placeholder="Poste de l'agent">
+        <br>
+        <input type="text" id="serviceUpLigne" placeholder="Service de l'agent">
+        <br>
+        <input type="text" id="endroitUpLigne" placeholder="Lieux de travail">
+        <br>
+        <input type="tel" id="telUpLigne" placeholder="Numéro de téléphone fix et portable">
+        <br>
+        <input type="text" id="cheminUpPc" placeholder="Nom du poste de l'agent">
+        <br>
+        <button type="button" id="btnUpLigne">Enregistrer la modification</button>
+    </div>
+
+    <!-- Menu génération-->
+    <div id="generation">
+        <h3>Générer les signatures</h3>
+        <nav id="menu-genSign">
+            <ul id="menu-ul-gensign">
+                <li id="menu-li-gensign"><span id="sendIfCheck" class="hide"><button>Envoyer aux agents sélectionnés</button></span></li>
+                <li id="menu-li-gensign">
+                    <select id="list" onchange="displayTabTrie()">
+                        <option value="0">Trier par service :</option>
+                        <option value="1">Informatique</option>
+                        <option value="2">Comptabilité</option>
+                        <option value="3">Voirie</option>
+                        <option value="4">Bâtiment</option>
+                        <option value="5">Jeunesse</option>
+                        <option value="6">Petite Enfance</option>
+                        <option value="7">Érim</option>
+                        <option value="8">Projet Culturel</option>
+                        <option value="9">Administration Généra</option>
+                        <option value="10">SPASAD</option>
+                        <option value="11">Cours D'Eau</option>
+                        <option value="12">Développement Rural</option>
+                        <option value="13">Aménagement Du Territoire</option>
+                        <option value="14">Direction</option>
+                        <option value="15">Déchet</option>
+                        <option value="16">Aquatis</option>
+                        <option value="17">Communication</option>
+                        <option value="18">RH</option>
+                    </select>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <!-- Fin Menu génération-->
+    
+    <!-- Tableau général -->
+    <p id="titleTable" class="titleTab">Tableau Général</p>
+    <div class="tableau">
+        <table id="tableRegistre">
+            <thead>
+                <tr>
+                    <th><i id="checkAll" class="fa fa-send"></i></th>
+                    <th><i class=""></i>Nom</th>
+                    <th><i class=""></i>Prénom</th>
+                    <th><i class=""></i>Adresse Mail</th>
+                    <th><i class=""></i>Poste</th>
+                    <th><i class=""></i>Lieu de travail</th>
+                    <th><i class=""></i>Numéros de téléphones</th>
+                    <th><i class=""></i>Chemin de connexion</th>
+                    <th><i class="fas fa-edit"></i></th>
+                    <th><i class="fa-solid fa-trash"></i></th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <!-- Fin Tableau général -->
+
+    <!-- Footer -->
+    <!-- <footer>
+        <p><span>&copy; 2023</span> Osartis-Marquions Service-Informatique</p>
+    </footer> -->
+    <!-- Fin Footer -->
+
+    <!-- Script-->
+    <script src="generateTab.js"></script>
+    <script src="app.js"></script>
+    
+</body>
+</html>
