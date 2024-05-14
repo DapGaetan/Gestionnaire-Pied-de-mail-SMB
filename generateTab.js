@@ -73,10 +73,7 @@ function displayTabTrie() {
         });
 
         docs.forEach(el => {
-            // Création d'une ligne
             const row = tableRegistre.insertRow(1);
-            
-            // Création des cellules et injection du contenu
             const cell1 = row.insertCell(0);
             cell1.innerHTML = '<input type="checkbox" name="personne" id="' + el._id + '" class="visible">';
             
