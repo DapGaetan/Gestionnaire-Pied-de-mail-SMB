@@ -163,7 +163,7 @@ function displayTabTrie() {
                         });
                         alert(el.nom + " " + el.prenom + " ne fait plus partie de la base de données et la suppression est irrévocable !");
                     } else {
-                        alert("Aucun agent n'a été supprimé de la base de données.");
+                        alert('Aucun agent n\'a été supprimé de la base de données.');
                     }
                 });
 
