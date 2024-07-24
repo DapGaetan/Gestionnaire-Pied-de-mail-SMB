@@ -12,7 +12,7 @@ submitButton.addEventListener('click', (event) => {
     if (error) {
       console.error(error);
     } else {
-      console.log('Fichier copié avec succès dans la racine de l\'application');
+      console.log("Fichier copié avec succès dans la racine de l'application");
       alert("Votre fichier template.hbs a bien été ajouté");
     }
   });
